@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  auth-service:
+    build: ./services
+    container_name: auth-service
+    environment:
+      - SERVICE_NAME=auth-service
+      - CHAOS_DURATION=30
+    ports:
+      - "8001:8000"
+
+  payments-service:
+    build: ./services
+    container_name: payments-service
+    environment:
+      - SERVICE_NAME=payments-service
+      - CHAOS_DURATION=30
+    ports:
+      - "8002:8000"
+
+  api-gateway:
+    build: ./services
+    container_name: api-gateway
+    environment:
+      - SERVICE_NAME=api-gateway
+      - CHAOS_DURATION=30
+    ports:
+      - "8003:8000"
