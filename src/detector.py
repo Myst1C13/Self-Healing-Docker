@@ -1,4 +1,4 @@
-import uiud
+import uuid
 import numpy as np
 from datetime import datetime, timezone
 from src.config import THRESHOLDS, WINDOW_SIZE
